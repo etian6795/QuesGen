@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div id="mainContent">
+            <img id="logoModal" src="logo.png"/>
+            <h1 style="padding-top: 20px;letter-spacing: 3px; margin-bottom: 30px;">QuesGen</h1>
+            <p>A multiplayer AI powered trivia game for education!</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#joinGameModal">Join Game</button>
+            <button type="button" class="btn btn-info" onclick="createRoom()">Create Game</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#aboutModal">How to Play</button>
+            <br>
+            <br>
+            <span class="badge bg-warning text-dark"></span>
+                Server Online
+                <div class="spinner-grow text-success" role="status" style="height:13px; width:13px;">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="joinGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Join a Game</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">@</div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Room Code">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="joinGameButton" onclick="attemptJoinGame()">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">About</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>How to Play</h1>
+                    <ol>
+                        <li><strong>Players:</strong> Gather your friends and have them join the same room on the site. Each player starts with 3 hearts. The goal is to be the last person with hearts remaining.</li>
+                        <li><strong>Categories:</strong> Questions are based on predetermined STEM categories. You can also upload your own notes as a PDF file, and the game will process these notes and generate related questions to customize your experience.</li>
+                        <li><strong>Gameplay:</strong>
+                            <ul>
+                                <li>Questions will appear one at a time, and the player whose turn it is must answer the question.</li>
+                                <li>Each player has 10 seconds to respond. The question will be evaluated by a large language model to determine if the answer is correct.</li>
+                                <li>THe player can repeatedly submit answers until they submit a correct answer, but if they fail to within the time limit, they lose a heart.</li>
+                                <li>Players can lose up to a maximum of 3 hearts. If a player loses all their hearts, they are out of the game.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Winning the Game:</strong> The last player with at least 1 heart left is the winner. If all players lose their hearts in the same round, no one wins.</li>
+                    </ol>
+
+                    <p><strong>Note:</strong> Be ready to think quickly and answer accurately, as each incorrect answer could bring you one step closer to elimination!</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
