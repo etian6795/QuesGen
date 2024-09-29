@@ -1,4 +1,4 @@
-<h1><img src=""> QuesGen</h1>
+<h1><img src="https://quesgen.onrender.com/logo.png"> QuesGen</h1>
 
 <p>This is the source code for QuesGen, a fast-paced multiplayer 🏃 trivia/study game backed by the power of AI💪</p>
 
