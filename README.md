@@ -8,3 +8,7 @@
 
 <p>Now the fun part! Gamifying the process 🎮! Multiple players are placed in a room and are repeatedly cycled through by being asked questions. Each player has 3 lives, and if a player fails to produce a satisfactory response as determined by the LLM in the allotted time, the player loses a life. Once a player loses all lives, they are eliminated from the game. Speed and accuracy are crucial to victory in QuesGen. The last player standing wins the game.</p>
 <p>User responses were reviewed with the GPT-4 API, where we use Chain-of-Thought reasoning to more accurately evaluate a response for correctness.</p>
+
+<h1>Youtube Demo</h1>
+
+[![QuesGen](http://img.youtube.com/vi/O7TLz_F-3Hg/0.jpg)](http://www.youtube.com/watch?v=O7TLz_F-3Hg "Video Title")
